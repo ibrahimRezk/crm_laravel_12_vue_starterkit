@@ -23,7 +23,7 @@ interface Props {
     }>;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
     stats: () => ({
         total_contacts: 0,
         total_deals: 0,
@@ -47,7 +47,7 @@ const formatCurrency = (value: number) => {
     <Head :title="t('dashboard')" />
 
     <AppSidebarLayout
-        :breadcrumbs="[{ title: t('dashboard'), href: dashboard() }]"
+        :breadcrumbs="[{ title: t('dashboard'), href: dashboard().url }]"
     >
         <div class="flex h-full flex-1 flex-col gap-4 p-4">
             <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

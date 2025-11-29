@@ -27,3 +27,8 @@ Route::post('/language', function (\Illuminate\Http\Request $request) {
 })->name('language.switch');
 
 require __DIR__ . '/settings.php';
+
+
+
+// resources/js/pages/Contacts/Index.vue
+//   182:56  error  Using v-html on component may break component's content  vue/no-v-text-v-html-on-component

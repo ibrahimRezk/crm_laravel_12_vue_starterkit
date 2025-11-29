@@ -154,7 +154,9 @@ const deleteContact = (id: number) => {
                             size="sm"
                             as-child
                         >
-                            <Link :href="link.url" v-html="link.label" />
+                            <Link :href="link.url">
+                                <span v-html="link.label"></span>
+                            </Link>
                         </Button>
                         <span v-else v-html="link.label" class="px-2 text-sm text-muted-foreground"></span>
                     </template>

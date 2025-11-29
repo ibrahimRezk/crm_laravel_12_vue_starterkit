@@ -10,7 +10,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-vue-next';
 
-const { locale, t } = useI18n();
+// const { locale, t } = useI18n();
+const {  t } = useI18n();
 
 const switchLanguage = (lang: string) => {
     router.post('/language', { locale: lang }, {

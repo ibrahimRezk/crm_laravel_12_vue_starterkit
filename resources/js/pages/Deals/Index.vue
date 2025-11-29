@@ -5,8 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useI18n } from 'vue-i18n';
 import { Plus } from 'lucide-vue-next';
-import  deals  from '@/routes/deals';
+import  dealsRoute  from '@/routes/deals';
 import { computed } from 'vue';
+import { type BreadcrumbItem } from '@/types';
+
+
 
 const props = defineProps<{
     deals: Array<{
@@ -34,12 +37,20 @@ const dealsByStage = computed(() => {
 const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
 };
+
+const breadcrumbItems: BreadcrumbItem[] = [
+        { 
+            title: t('deals'),
+            href: dealsRoute.index().url 
+        }
+    ];
+
 </script>
 
 <template>
     <Head :title="t('deals')" />
 
-    <AppSidebarLayout :breadcrumbs="[{ title: t('deals'), href: deals.index() }]">
+    <AppSidebarLayout :breadcrumbs="breadcrumbItems">
         <Card  class=" w-full h-full">
 
         
@@ -47,7 +58,7 @@ const formatCurrency = (value: number) => {
             <div class="flex items-center justify-between shrink-0">
                 <h1 class="text-xl font-semibold">{{ t('Deals Pipeline') }}</h1>
                 <Button as-child>
-                    <Link :href="deals.create()">
+                    <Link :href="dealsRoute.create()">
                         <Plus class="mr-2 h-4 w-4" />
                         {{ t('Add Deal') }}
                     </Link>
