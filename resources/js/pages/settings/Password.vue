@@ -18,7 +18,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
         href: edit().url,
     },
 ];
-</script>
+</script> 
 
 <template>
     <AppLayout :breadcrumbs="breadcrumbItems">

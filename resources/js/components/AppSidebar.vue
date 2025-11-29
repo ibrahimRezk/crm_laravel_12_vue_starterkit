@@ -27,17 +27,17 @@ const { locale } = useI18n();
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'dashboard',
         href: dashboard(),
         icon: LayoutGrid,
     },
     {
-        title: 'Contacts',
+        title: 'contacts',
         href: contacts(),
         icon: BookOpen,
     },
     {
-        title: 'Deals',
+        title: 'deals',
         href: deals(),
         icon: Folder,
     },

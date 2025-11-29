@@ -10,12 +10,21 @@ import {
     TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
 import { debounce } from 'lodash-es';
 import { Plus, Search, Pencil, Trash } from 'lucide-vue-next';
 import  contactsRoute  from '@/routes/contacts';
+import { type BreadcrumbItem } from '@/types';
+const { t } = useI18n();
+const breadcrumbItems: BreadcrumbItem[] = [
+    { 
+        title: t('contacts'),
+        href: contactsRoute.index().url
+    }
+    ];
 
 const props = defineProps<{
     contacts: {
@@ -38,7 +47,7 @@ const props = defineProps<{
     };
 }>();
 
-const { t } = useI18n();
+
 const search = ref(props.filters.search);
 
 watch(
@@ -62,7 +71,9 @@ const deleteContact = (id: number) => {
 <template>
     <Head :title="t('contacts')" />
 
-    <AppSidebarLayout :breadcrumbs="[{ title: t('contacts'), href: contactsRoute.index() }]">
+    <AppSidebarLayout :breadcrumbs="breadcrumbItems">
+        <Card>
+
         <div class="flex h-full flex-1 flex-col gap-4 p-4">
             <div class="flex items-center justify-between">
                 <div class="relative w-full max-w-sm items-center">
@@ -150,5 +161,7 @@ const deleteContact = (id: number) => {
                 </div>
             </div>
         </div>
+                </Card>
+
     </AppSidebarLayout>
 </template>

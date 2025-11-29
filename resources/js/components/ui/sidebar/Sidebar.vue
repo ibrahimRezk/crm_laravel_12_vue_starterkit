@@ -87,8 +87,19 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     >
       <div
         data-sidebar="sidebar"
-        class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+        class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm z-10"
       >
+
+
+         <div
+                    class="w-full h-full absolute top-0 left-0 bg-[url('/assets/img/noise.jpg')] bg-contain bg-center opacity-[.1] dark:opacity-[.1] dark:invert -z-20 rounded-xl"
+                />
+                <div
+                    class="w-full h-full absolute top-0 left-0 bg-[url('/assets/img/grid.svg')] bg-contain bg-center opacity-[.1] invert blur-[0.5px] dark:blur-[0px] dark:invert-0 dark:opacity-[.1] -z-20 rounded-xl"
+                />
+
+
+
         <slot />
       </div>
     </div>

@@ -40,6 +40,9 @@ const formatCurrency = (value: number) => {
     <Head :title="t('deals')" />
 
     <AppSidebarLayout :breadcrumbs="[{ title: t('deals'), href: deals.index() }]">
+        <Card  class=" w-full h-full">
+
+        
         <div class="flex h-full flex-col gap-4 p-4 overflow-hidden">
             <div class="flex items-center justify-between shrink-0">
                 <h1 class="text-xl font-semibold">{{ t('Deals Pipeline') }}</h1>
@@ -81,5 +84,6 @@ const formatCurrency = (value: number) => {
                 </div>
             </div>
         </div>
+        </Card>
     </AppSidebarLayout>
 </template>

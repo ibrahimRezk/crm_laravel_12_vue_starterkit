@@ -9,12 +9,16 @@ import {
 import { urlIsActive } from '@/lib/utils';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/vue3';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 
 defineProps<{
     items: NavItem[];
 }>();
 
-const page = usePage();
+const page = usePage(); 
 </script>
 
 <template>
@@ -29,7 +33,7 @@ const page = usePage();
                 >
                     <Link :href="item.href">
                         <component :is="item.icon" />
-                        <span>{{ item.title }}</span>
+                        <span>{{ t(item.title) }}</span>
                     </Link>
                 </SidebarMenuButton>
             </SidebarMenuItem>

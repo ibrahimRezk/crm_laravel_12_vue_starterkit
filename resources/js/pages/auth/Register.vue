@@ -12,7 +12,7 @@ import { Form, Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <AuthBase
+    <AuthBase 
         title="Create an account"
         description="Enter your details below to create your account"
     >
